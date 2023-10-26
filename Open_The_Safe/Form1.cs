@@ -7,6 +7,7 @@ namespace Open_The_Safe
             InitializeComponent();
             code = new int[3];
             random = new Random();
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -39,6 +40,7 @@ namespace Open_The_Safe
             button1.Enabled = true;
             button3.Enabled = false;
             textBox2.Text = "";
+            pictureBox1.Image = pictureBox1.ErrorImage;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -70,7 +72,10 @@ namespace Open_The_Safe
                 button1.Enabled = false;
                 button3.Enabled = true;
                 textBox1.Text = "You Win";
-            } else
+                pictureBox1.Image = pictureBox1.InitialImage;
+                pictureBox1.Size = new Size(256, 212);
+            }
+            else
             {
                 string turn;
                 turn = numericUpDown1.Value + "," + numericUpDown2.Value + "," + numericUpDown3.Value;
@@ -87,6 +92,8 @@ namespace Open_The_Safe
                 if ((numericUpDown1.Value == code[0] && numericUpDown2.Value == code[1]) || (numericUpDown1.Value == code[0] && numericUpDown3.Value == code[2]) || (numericUpDown3.Value == code[2] && numericUpDown2.Value == code[1]))
                 {
                     turn += " - Close!";
+                    pictureBox1.Image = pictureBox1.InitialImage;
+                    pictureBox1.Size = new Size(125, 106);
                 }
                 else
                 {
@@ -95,5 +102,7 @@ namespace Open_The_Safe
                 textBox2.AppendText("\r\n" + turn);
             }
         }
+
+
     }
 }

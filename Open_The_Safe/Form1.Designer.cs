@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             numericUpDown1 = new NumericUpDown();
             numericUpDown2 = new NumericUpDown();
             numericUpDown3 = new NumericUpDown();
@@ -134,10 +135,13 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Enabled = false;
-            pictureBox1.Location = new Point(26, 210);
+            pictureBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pictureBox1.ErrorImage = null;
+            pictureBox1.ImageLocation = "";
+            pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
+            pictureBox1.Location = new Point(12, 135);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(256, 143);
+            pictureBox1.Size = new Size(256, 212);
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             // 
