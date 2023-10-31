@@ -39,10 +39,13 @@
             button3 = new Button();
             button4 = new Button();
             pictureBox1 = new PictureBox();
+            numericUpDown4 = new NumericUpDown();
+            textBox3 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown4).BeginInit();
             SuspendLayout();
             // 
             // numericUpDown1
@@ -115,17 +118,17 @@
             // 
             // button3
             // 
-            button3.Location = new Point(52, 55);
+            button3.Location = new Point(156, 55);
             button3.Name = "button3";
             button3.Size = new Size(112, 34);
             button3.TabIndex = 6;
-            button3.Text = "Start";
+            button3.Text = "Bet";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
             // button4
             // 
-            button4.Location = new Point(170, 55);
+            button4.Location = new Point(274, 55);
             button4.Name = "button4";
             button4.Size = new Size(112, 34);
             button4.TabIndex = 7;
@@ -145,11 +148,33 @@
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             // 
+            // numericUpDown4
+            // 
+            numericUpDown4.Increment = new decimal(new int[] { 50, 0, 0, 0 });
+            numericUpDown4.Location = new Point(33, 55);
+            numericUpDown4.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            numericUpDown4.Name = "numericUpDown4";
+            numericUpDown4.Size = new Size(117, 31);
+            numericUpDown4.TabIndex = 9;
+            numericUpDown4.ValueChanged += numericUpDown4_ValueChanged;
+            // 
+            // textBox3
+            // 
+            textBox3.Enabled = false;
+            textBox3.Location = new Point(428, 54);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(150, 31);
+            textBox3.TabIndex = 10;
+            textBox3.Text = "Money: 100";
+            textBox3.TextChanged += textBox3_TextChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(887, 365);
+            Controls.Add(textBox3);
+            Controls.Add(numericUpDown4);
             Controls.Add(pictureBox1);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -166,6 +191,7 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -185,5 +211,9 @@
         private int[] code;
         Random random;
         private int lives;
+        private int money = 100;
+        private int bet;
+        private NumericUpDown numericUpDown4;
+        private TextBox textBox3;
     }
 }
