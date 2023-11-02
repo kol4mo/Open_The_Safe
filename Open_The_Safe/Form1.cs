@@ -103,10 +103,12 @@ namespace Open_The_Safe
                 }
                 else if (numericUpDown1.Value == code[0] || numericUpDown2.Value == code[1] || numericUpDown3.Value == code[2])
                 {
+                    pictureBox1.Image = pictureBox1.ErrorImage;
                     turn += " - only one loser";
                 }
                 else
                 {
+                    pictureBox1.Image = pictureBox1.ErrorImage;
                     turn += " - way off you loser!";
                 }
                 textBox2.AppendText("\r\n" + turn);
